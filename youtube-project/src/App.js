@@ -1,9 +1,9 @@
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 import Home from './components/Home';
-import About from './components/About';
+import About from './components/About/About';
 import Video from './components/Video';
 import VideoIndex from './components/VideoIndex';
-// import './App.css';
+import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { getVideos } from './api/fetch';
 
