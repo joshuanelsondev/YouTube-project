@@ -7,5 +7,7 @@ const URL = process.env.REACT_APP_API_KEY
 
 // When searching for videos use the <snippet.channelId> after 'relatedToVideoId=' from the JSON: BASE_URL + 'part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=[YOUR_API_KEY]'
 
-
+export function getVideos() {
+    
+}
 
