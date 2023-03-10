@@ -1,0 +1,28 @@
+.nav-wrapper {
+  height: 10vh;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-wrapper > *,
+.nav-wrapper nav ul > * {
+  margin: 0 1rem;
+}
+
+.nav-wrapper a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-wrapper li {
+  list-style-type: none;
+  font-size: 1.3rem;
+}
