@@ -1,3 +1,4 @@
+
 import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
@@ -6,7 +7,7 @@ import VideoIndex from './components/VideoIndex';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
     <div className="wrapper">
       <Router>
@@ -20,6 +21,3 @@ function App() {
       </Router>
     </div>
   );
-}
-
-export default App;
