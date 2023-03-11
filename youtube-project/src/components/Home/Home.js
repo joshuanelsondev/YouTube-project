@@ -5,7 +5,7 @@ import {v1 as generateUniqueID} from "uuid";
 
 export default function Home() {
   // const [error, setError ] = useState(false)
-  // const [videos, setVideos ] = useState([])
+  const [videos, setVideos ] = useState([])
 
   const [userSearchInput, setUserSearchInput] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
@@ -27,10 +27,14 @@ export default function Home() {
     setUserSearchInput("")
 
     //Make fetch call
-    getVideos(userSearchInput, videoQuantity).then(response => console.log(response))
+    getVideos(userSearchInput, videoQuantity)
+      .then(response => {
+        console.log(response);
+      }).catch(error => {
+        console.log(error)
+      })
+      
   };
-
-
 
 
   return (
