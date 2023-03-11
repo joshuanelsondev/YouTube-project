@@ -4,7 +4,7 @@ export default function ErrorMessage() {
   return (
     <div>
       <img src={notFoundSVG} alt="Man looking into the void" />
-      <h1>This resource doesn't exsist!</h1>
+      <h1>This resource doesn't exist!</h1>
     </div>
   );
 }
