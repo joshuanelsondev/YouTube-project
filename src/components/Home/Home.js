@@ -1,19 +1,45 @@
 import './Home.css';
-// import { useState } from "react";
+import { useState } from "react";
+import { getVideos } from '../../api/fetch';
+import {v1 as generateUniqueID} from "uuid";
 
 export default function Home() {
   // const [error, setError ] = useState(false)
   // const [videos, setVideos ] = useState([])
 
-  // function handleSearch(event){};
+  const [userSearchInput, setUserSearchInput] = useState("");
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [videoQuantity, setVideoQuantity] = useState(10);
+
+  function handleTextInput(event) {
+    setUserSearchInput(event.target.value)
+  }
+
+  function handleSearch(event){
+    event.preventDefault();
+    //For possible future use of displaying search history
+    const duplicateSearch = searchHistory.find(input => (input.search).toLowerCase() === userSearchInput.toLowerCase())
+    if (!duplicateSearch) {
+      setSearchHistory([...searchHistory, {search: userSearchInput, id: generateUniqueID()}]);
+    }
+
+    //Reset the state
+    setUserSearchInput("")
+
+    //Make fetch call
+    getVideos(userSearchInput, videoQuantity).then(response => console.log(response))
+  };
+
+
+
 
   return (
     <>
       <main>
-        <div className="search-bar">
-          <input type="text" id="searchInput" />
+        <form onSubmit={handleSearch} className="search-bar">
+          <input onChange={handleTextInput} value={userSearchInput} type="text" id="searchInput" />
           <input type="submit" />
-        </div>
+        </form>
         <div>{/* Initial thumbnails/map over api data will go here */}</div>
       </main>
     </>
