@@ -9,6 +9,7 @@ export default function Home() {
 
   const [userSearchInput, setUserSearchInput] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
+  const [videoQuantity, setVideoQuantity] = useState(10);
 
   function handleTextInput(event) {
     setUserSearchInput(event.target.value)
@@ -16,20 +17,29 @@ export default function Home() {
 
   function handleSearch(event){
     event.preventDefault();
+    //For possible future use of displaying search history
     const duplicateSearch = searchHistory.find(input => (input.search).toLowerCase() === userSearchInput.toLowerCase())
     if (!duplicateSearch) {
       setSearchHistory([...searchHistory, {search: userSearchInput, id: generateUniqueID()}]);
     }
 
+    //Reset the state
+    setUserSearchInput("")
+
+    //Make fetch call
+    getVideos(userSearchInput, videoQuantity).then(response => console.log(response))
   };
+
+
+
 
   return (
     <>
       <main>
-        <div className="search-bar">
-          <input onChange={handleTextInput} type="text" id="searchInput" />
-          <input onClick={handleSearch} type="submit" />
-        </div>
+        <form onSubmit={handleSearch} className="search-bar">
+          <input onChange={handleTextInput} value={userSearchInput} type="text" id="searchInput" />
+          <input type="submit" />
+        </form>
         <div>{/* Initial thumbnails/map over api data will go here */}</div>
       </main>
     </>
