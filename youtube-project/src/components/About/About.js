@@ -12,7 +12,7 @@ export default function About() {
           </h1>
           <p>
             This web application was created using Google's Youtube v3 API data.
-            This project was builtutilizing React and React Router for Pursuit
+            This project was built utilizing React and React Router for Pursuit
             Cohort 9.3.
           </p>
           <h3>About Our Founders:</h3>

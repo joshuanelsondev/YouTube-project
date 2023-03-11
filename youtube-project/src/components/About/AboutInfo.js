@@ -7,15 +7,18 @@ export const aboutInfo = [
     name: 'Ari Jackson',
     img: ari,
     description: '',
+    githubUserName: 'ari-jackson',
   },
   {
     name: 'Joshua Nelson',
     img: josh,
     description: '',
+    githubUserName: 'joshuanelsondev',
   },
   {
     name: 'SangUn Park',
     img: sang,
     description: '',
+    githubUserName: 'SangunPark96',
   },
 ];
