@@ -1,0 +1,30 @@
+.search-bar {
+  padding: 2rem;
+  text-align: center;
+}
+.search-bar input[type='text'],
+.search-bar input[type='submit'] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+}
+
+.search-bar input[type='text'] {
+  min-width: 40%;
+  width: 13rem;
+}
+
+.search-bar input[type='submit'] {
+  width: 5rem;
+  margin-left: 0.5rem;
+  background-color: red;
+  border-color: red;
+  color: white;
+  transition: all ease 200ms;
+}
+
+.search-bar input[type='submit']:hover {
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}

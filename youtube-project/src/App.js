@@ -1,13 +1,9 @@
 import Nav from './components/Nav/Nav';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import About from './components/About/About';
 import Video from './components/Video';
 import VideoIndex from './components/VideoIndex';
-// import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
-
 
 export default function App() {
   return (
