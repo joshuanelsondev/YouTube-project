@@ -1,8 +1,9 @@
 .nav-wrapper {
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   background-color: red;
   display: flex;
+  align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

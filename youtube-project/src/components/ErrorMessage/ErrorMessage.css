@@ -1,0 +1,42 @@
+.error-message-background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+}
+
+.error-message {
+  margin: 4rem auto;
+  width: fit-content;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgb(0 0 0 / 0.3);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.error-message > * {
+  margin: 1rem 0rem;
+}
+
+.error-message .x-svg {
+  font-size: 2rem;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  align-self: flex-end;
+}
+
+.error-message .void-svg {
+  margin: 2.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+}
