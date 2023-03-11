@@ -2,6 +2,8 @@ import './Home.css';
 import { useState } from "react";
 import { getVideos } from '../../api/fetch';
 import {v1 as generateUniqueID} from "uuid";
+import VideoIndex from "../VideoIndex";
+
 
 export default function Home() {
   // const [error, setError ] = useState(false)
@@ -29,14 +31,14 @@ export default function Home() {
     //Make fetch call
     getVideos(userSearchInput, videoQuantity)
       .then(response => {
-        console.log(response);
+        setVideos(response.items);
       }).catch(error => {
         console.log(error)
       })
       
   };
 
-
+  console.log(videos, searchHistory)
   return (
     <>
       <main>
@@ -45,6 +47,7 @@ export default function Home() {
           <input type="submit" />
         </form>
         <div>{/* Initial thumbnails/map over api data will go here */}</div>
+        <VideoIndex videos={videos} />
       </main>
     </>
   );

@@ -3,7 +3,7 @@ import './Nav.css';
 
 export default function Nav() {
   return (
-    <header class="nav-wrapper">
+    <header className="nav-wrapper">
       <h1>
         <Link to="/">YouTube</Link>
       </h1>
