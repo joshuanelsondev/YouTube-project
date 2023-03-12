@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getVideos } from '../../api/fetch';
 import {v1 as generateUniqueID} from "uuid";
 import VideoIndex from "../VideoIndex";
+import testApi from "../../assets/testApi.json";
 
 
 export default function Home() {
@@ -26,23 +27,24 @@ export default function Home() {
     if (!duplicateSearch) {
       setSearchHistory([...searchHistory, {search: userSearchInput, id: generateUniqueID()}]);
     }
-    navigate(`/videos`, { state: { videos } });
+
     //Reset the state
     setUserSearchInput("")
-
+    
     //Make fetch call
-    getVideos("../../assets/testApi.json", videoQuantity)
-      .then(response => {
-        setVideos(response.items);
-    console.log(response)
+    getVideos(testApi, videoQuantity)
+    .then(response => {
+      
+      setVideos(response.items);
+      navigate(`/videos`, { state: { videos } });
 
       }).catch(error => {
         console.log(error)
       })
-
-      
   };
 
+        console.log(videos)
+  
   
   return (
     <>

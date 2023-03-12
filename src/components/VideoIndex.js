@@ -6,10 +6,11 @@ export default function VideoIndex() {
     const navigate = useNavigate();
     const location = useLocation();
     const videos = location.state;
-
     const [videoThumbnails, setVideoThumbnails] = useState(videos)
-    
+    console.log(videos)
+useEffect(() => {
 
+    
     setVideoThumbnails( videos.map(video => {
         const url = video.snippet.thumbnails.high.url;
         const width = video.snippet.thumbnails.high.width;
@@ -20,6 +21,8 @@ export default function VideoIndex() {
             <img key={id} onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
         )
     }))
+}, [videos])
+
 
     
 
