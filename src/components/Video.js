@@ -1,8 +1,11 @@
-import { getVideos } from "../api/fetch";
 import YouTube from 'react-youtube';
+import { useLocation } from "react-router-dom";
 
 export default function Video() {
-
+    const location = useLocation();
+    const video = location.state.video
+    const id = video.id.videoId
+    console.log(id);
 
     const opts = {
         height: '390',
@@ -13,6 +16,6 @@ export default function Video() {
         },
     };
 
-  return <YouTube videoId={""} opts={opts}  />;
+  return <YouTube videoId={id} opts={opts}  />;
                  
 };
