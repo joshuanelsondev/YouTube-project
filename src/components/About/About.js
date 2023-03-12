@@ -1,5 +1,5 @@
 import './About.css';
-import CreatorCard from './CreatorCard';
+import BioCard from './BioCard/BioCard';
 import { aboutInfo } from './AboutInfo';
 
 export default function About() {
@@ -18,7 +18,9 @@ export default function About() {
           <h3>About Our Founders:</h3>
           <aside>
             {aboutInfo.map((person) => (
-              <CreatorCard person={person} />
+              <div className="outter-card">
+                <BioCard person={person} />
+              </div>
             ))}
           </aside>
         </article>

@@ -1,0 +1,47 @@
+.inner-card {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 0.5rem rgb(0 0 0 / 0.3);
+  margin: 0;
+  transform-style: preserve-3d;
+  transition: transform 500ms;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.bio-card {
+  position: absolute;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  overflow-wrap: break-word;
+  background-color: white;
+  backface-visibility: hidden;
+}
+
+.bio-card.front {
+  z-index: 10;
+}
+
+.bio-card.back {
+  transform: rotateY(180deg);
+}
+
+.bio-card img {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 100%;
+}
+
+.bio-card a {
+  font-size: 3rem;
+  color: black;
+  display: block;
+  margin-top: 1rem;
+}
