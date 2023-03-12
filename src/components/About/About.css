@@ -17,27 +17,21 @@
 
 .about-page aside {
   display: flex;
-  gap: 5rem;
+  gap: 4rem;
 }
 
-.creator-profile {
-  padding: 1rem;
+.about-page .outter-card {
+  perspective: 1000px;
+  height: 18rem;
+  width: 15rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgb(0 0 0 / 0.3);
-  text-align: center;
-}
-
-.creator-profile img {
-  height: 13rem;
-  width: 13rem;
-  border-radius: 100%;
+  position: relative;
 }
 
 @media screen and (max-width: 991px) {
-  /* start of large tablet styles */
   .about-page aside {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
   }
 }
