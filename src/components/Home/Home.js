@@ -17,7 +17,7 @@ export default function Home() {
   const [videoQuantity, setVideoQuantity] = useState(10);
 
   function handleTextInput(event) {
-    event.preventDefault;
+    event.preventDefault();
     setUserSearchInput(event.target.value);
   }
 
