@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './CreatorCard.css';
+import './BioCard.css';
 import { AiFillGithub } from 'react-icons/ai';
 
-export default function CreatorCard({
+export default function BioCard({
   person: { description, githubUserName, name, img },
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -11,11 +11,11 @@ export default function CreatorCard({
       className={`inner-card ${isFlipped && 'flipped'}`}
       onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className="creator-profile front">
+      <div className="bio-card front">
         <img src={img} alt={`${name}'s Profile`} />
         <h3>{name}</h3>
       </div>
-      <div className="creator-profile back">
+      <div className="bio-card back">
         <p>{description}</p>
         <a href={`https://github.com/${githubUserName}`}>
           <AiFillGithub />
