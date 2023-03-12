@@ -5,7 +5,7 @@ export default function Video() {
     const location = useLocation();
     const video = location.state.video
     const id = video.id.videoId
-    console.log(id);
+
 
     const opts = {
         height: '390',
