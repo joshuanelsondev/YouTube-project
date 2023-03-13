@@ -17,9 +17,9 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-        <Nav />
+        <Nav videos={videos} setVideos={setVideos} />
         <Routes>
-          <Route path="/" element={<Home videos={videos} setVideos={setVideos} />} />
+          <Route path="/" />
           <Route path="/about" element={<About />} />
           <Route path="/videos" element={<VideoIndex videos={videos} />} />
           <Route path="/videos/:id" element={<Video />} />
