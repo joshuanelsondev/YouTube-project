@@ -14,7 +14,7 @@ export const aboutInfo = [
     name: 'Joshua Nelson',
     img: josh,
     description:
-      'Joshua is the Project Manager for this project. [The rest of Josh\'s bio. "Check out his other projects to see more of his work."]',
+      'Joshua is the Project Manager for this project. He is a developer, musician, and educator that loves problem-solving. Click the icon below to see more of his work.',
     githubUserName: 'joshuanelsondev',
   },
   {
