@@ -1,17 +1,15 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
-export default function VideoIndex() {
+export default function VideoIndex({ videos }) {
+   
+    const [videoThumbnails, setVideoThumbnails] = useState(videos);
     const navigate = useNavigate();
-    const location = useLocation();
-    const videos = location.state;
-    const [videoThumbnails, setVideoThumbnails] = useState(videos)
     console.log(videos)
-useEffect(() => {
+    useEffect(() => {
+        setVideoThumbnails(videos.map(video => {
 
-    
-    setVideoThumbnails( videos.map(video => {
         const url = video.snippet.thumbnails.high.url;
         const width = video.snippet.thumbnails.high.width;
         const height = video.snippet.thumbnails.high.height;
@@ -22,9 +20,8 @@ useEffect(() => {
         )
     }))
 }, [videos])
-
-
     
+
 
     function handleClick(id, video) {
 
