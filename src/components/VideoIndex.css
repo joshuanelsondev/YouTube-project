@@ -1,0 +1,19 @@
+
+.thumbnailsDiv {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 480px 480px;
+    column-gap: 50px;
+    margin: 50px;
+}
+
+.thumbnail {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    font-size: 20px;
+}

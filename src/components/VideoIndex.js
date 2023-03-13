@@ -1,30 +1,32 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import './VideoIndex.css';
 
 
-export default function VideoIndex() {
+export default function VideoIndex({ videos }) {
+   
     const navigate = useNavigate();
-    const location = useLocation();
-    const videos = location.state;
-    const [videoThumbnails, setVideoThumbnails] = useState(videos)
-    console.log(videos)
-useEffect(() => {
+    const [videoThumbnails, setVideoThumbnails] = useState([]);
 
+    useEffect(() => {
     
-    setVideoThumbnails( videos.map(video => {
-        const url = video.snippet.thumbnails.high.url;
-        const width = video.snippet.thumbnails.high.width;
-        const height = video.snippet.thumbnails.high.height;
-        const alt = video.snippet.title;
-        const id = video.id.videoId;
+        setVideoThumbnails(videos.map((video, index) => {
+            const url = video.snippet.thumbnails.high.url;
+            const width = video.snippet.thumbnails.high.width;
+            const height = video.snippet.thumbnails.high.height;
+            const alt = video.snippet.title;
+            const id = video.id.videoId;
+            const title = video.snippet.title;
         return(
-            <img key={id} onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
+            <div className="thumbnail">
+                <img className="thumbnailImg" key={id || index} onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
+                <span className="title">{title}</span>
+            </div>
         )
     }))
-}, [videos])
+    console.log(videos)
+}, [videos]) 
 
-
-    
 
     function handleClick(id, video) {
 
@@ -32,7 +34,7 @@ useEffect(() => {
     }
 
     return(
-        <div>
+        <div className="thumbnailsDiv">
             {videoThumbnails}
         </div>
     )

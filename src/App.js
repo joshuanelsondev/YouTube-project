@@ -4,16 +4,25 @@ import About from './components/About/About';
 import Video from './components/Video';
 import VideoIndex from './components/VideoIndex';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from "react";
+import './index.css'
+
 
 export default function App() {
+
+  const [videos, setVideos ] = useState([])
+
+
+
+
   return (
     <div className="wrapper">
       <Router>
-        <Nav />
+        <Nav videos={videos} setVideos={setVideos} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" />
           <Route path="/about" element={<About />} />
-          <Route path="/videos" element={<VideoIndex />} />
+          <Route path="/videos" element={<VideoIndex videos={videos} />} />
           <Route path="/videos/:id" element={<Video />} />
         </Routes>
       </Router>

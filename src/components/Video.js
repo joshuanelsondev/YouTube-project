@@ -1,5 +1,6 @@
 import YouTube from 'react-youtube';
 import { useLocation } from "react-router-dom";
+import './Video.css'
 
 export default function Video() {
     const location = useLocation();
@@ -8,14 +9,14 @@ export default function Video() {
 
 
     const opts = {
-        height: '390',
-        width: '640',
+        height: '600',
+        width: '1000',
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 0,
         },
     };
 
-  return <YouTube videoId={id} opts={opts}  />;
+  return <YouTube className='youtubeVideo' videoId={id} opts={opts}  />;
                  
 };

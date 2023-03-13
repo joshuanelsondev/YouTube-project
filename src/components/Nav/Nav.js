@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import Home from '../Home/Home'
+
 import './Nav.css';
 
-export default function Nav() {
+export default function Nav({ videos, setVideos }) {
+
+
   return (
     <header className="nav-wrapper">
       <h1>
@@ -10,10 +14,13 @@ export default function Nav() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/videos">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Home videos={videos} setVideos={setVideos} />
           </li>
         </ul>
       </nav>
