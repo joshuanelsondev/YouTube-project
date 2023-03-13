@@ -19,7 +19,7 @@ export default function Nav({ videos, setVideos }) {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className='searchLi'>
             <Home videos={videos} setVideos={setVideos} />
           </li>
         </ul>
