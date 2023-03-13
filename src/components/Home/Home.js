@@ -5,6 +5,7 @@ import { getVideos } from '../../api/fetch';
 import {v1 as generateUniqueID} from "uuid";
 import VideoIndex from "../VideoIndex";
 import testApi from "../../api/testApi.json";
+import { AiOutlineSearch } from "react-icons/ai";
 
 
 
@@ -53,11 +54,9 @@ export default function Home({ videos, setVideos }) {
     <>
       <main>
         <form onSubmit={handleSearch} className="search-bar">
-          <input onChange={handleTextInput} value={userSearchInput} type="text" id="searchInput" />
-          <input type="submit" />
+          <input onChange={handleTextInput} value={userSearchInput} type="text" id="searchInput" placeholder='Search' />
+          <button type='submit'><AiOutlineSearch className='searchIcon' size={25} /></button>
         </form>
-        <div>{/* Initial thumbnails/map over api data will go here */}</div>
-        {/* <VideoIndex videos={videos} /> */}
       </main>
     </>
   );
