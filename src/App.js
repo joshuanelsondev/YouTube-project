@@ -5,6 +5,7 @@ import Video from './components/Video';
 import VideoIndex from './components/VideoIndex';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from "react";
+import './index.css'
 
 
 export default function App() {
