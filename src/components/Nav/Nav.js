@@ -14,7 +14,7 @@ export default function Nav({ videos, setVideos }) {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/videos">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
