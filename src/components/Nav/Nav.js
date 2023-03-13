@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+
 import './Nav.css';
 
 export default function Nav() {
+
+
   return (
     <header className="nav-wrapper">
       <h1>
