@@ -33,7 +33,7 @@ export default function Home({ videos, setVideos }) {
       setUserSearchInput("")
     
       //Make fetch call
-      getVideos(testApi, videoQuantity) //Use testApi when trying to limit the number of calls to the api, otherwise use useSearchInput
+      getVideos(userSearchInput, videoQuantity) //Use testApi when trying to limit the number of calls to the api, otherwise use useSearchInput
       .then(response => {
         setVideos(response.items);
         navigate(`/videos`)
