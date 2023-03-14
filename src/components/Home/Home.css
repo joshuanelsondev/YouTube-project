@@ -8,24 +8,28 @@
 .search-bar button[type='submit'] {
   padding: 0.5rem;
   padding-left: 20px;
-  border-radius: 20px;
-  border-width: 1px;
+  border-width: 0;
+  border: 1px solid gray;
 }
 
 .search-bar input[type='text'] {
   min-width: 60%;
+  border-radius: 40px 0 0 40px;
+}
+
+.search-bar input[type='text']:focus {
+  outline: none;
+  z-index: 1;
+  border: 1px solid blue;
 }
 
 .search-bar button[type='submit'] {
   width: 3.5rem;
   height: 34px;
-  margin-left: 0.5rem;
   background-color: #f8f8f8;
   transition: all ease 200ms;
   position: relative;
-  right: 60px;
   border-radius: 0 20px 20px 0;
-  z-index: 2;
 }
 
 .searchIcon {
