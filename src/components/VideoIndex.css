@@ -23,3 +23,12 @@
     font-size: 20px;
 }
 
+img {
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease 600ms;
+}
+
+img:hover {
+    border-radius: 0px;
+}

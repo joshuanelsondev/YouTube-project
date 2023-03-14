@@ -9,15 +9,15 @@ export default function Nav({ videos, setVideos }) {
   return (
     <header className="nav-wrapper">
       <h1>
-        <Link to="/videos">YouTube</Link>
+        <Link className='navLink' to="/videos">YouTube</Link>
       </h1>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className='navLink' to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link className='navLink' to="/about">About</Link>
           </li>
           <li className='searchLi'>
             <Home videos={videos} setVideos={setVideos} />

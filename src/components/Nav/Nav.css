@@ -40,3 +40,7 @@ nav {
     width: -webkit-fill-available;
     justify-content: flex-start;
 }
+
+.navLink:hover {
+  text-decoration: underline;
+}
