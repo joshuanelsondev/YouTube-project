@@ -35,5 +35,5 @@ export default function VideoIndex({ videos }) {
     navigate(`/videos/${id}`, { state: { video } });
   }
 
-  return <div className="all-thumbnails">{videoThumbnails}</div>;
+  return <main className="all-thumbnails">{videoThumbnails}</main>;
 }

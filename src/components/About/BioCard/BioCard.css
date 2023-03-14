@@ -43,5 +43,11 @@
   font-size: 3rem;
   color: black;
   display: block;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+  margin: 1rem auto 0;
+}
+
+.bio-card a:hover {
+  color: red;
 }
