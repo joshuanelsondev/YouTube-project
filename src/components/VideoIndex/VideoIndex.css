@@ -6,7 +6,7 @@
   margin: 50px;
 }
 
-.single-thumbnails {
+.single-thumbnail {
   height: 480px;
   display: flex;
   flex-direction: column;
