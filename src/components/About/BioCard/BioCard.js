@@ -17,7 +17,10 @@ export default function BioCard({
       </div>
       <div className="bio-card back">
         <p>{description}</p>
-        <a href={`https://github.com/${githubUserName}`}>
+        <a
+          href={`https://github.com/${githubUserName}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <AiFillGithub />
         </a>
       </div>
