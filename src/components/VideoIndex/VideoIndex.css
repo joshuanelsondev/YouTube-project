@@ -1,0 +1,33 @@
+.all-thumbnails {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 480px 480px;
+  column-gap: 50px;
+  margin: 50px;
+}
+
+.single-thumbnails {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.single-thumbnail .thumbnail-img {
+  height: 360px;
+  width: 480px;
+}
+
+.single-thumbnail .title {
+  font-size: 20px;
+}
+
+.single-thumbnail img {
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all ease 600ms;
+}
+
+.single-thumbnail img:hover {
+  border-radius: 0px;
+}

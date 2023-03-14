@@ -10,7 +10,6 @@
 .nav-wrapper > *,
 .nav-wrapper nav ul > * {
   margin: 0 1rem;
-  
 }
 
 .nav-wrapper a {
@@ -30,17 +29,17 @@
   font-size: 1.3rem;
 }
 
-nav {
+.nav-wrapper nav {
   display: flex;
   flex: 1 1 auto;
 }
 
-.searchLi {
-    display: flex;
-    width: -webkit-fill-available;
-    justify-content: flex-start;
+.nav-wrapper .search-li {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: flex-start;
 }
 
-.navLink:hover {
+.nav-link:hover {
   text-decoration: underline;
 }
