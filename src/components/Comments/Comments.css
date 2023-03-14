@@ -1,0 +1,45 @@
+.commentsDiv {
+    width: 100%;
+}
+
+form {
+    display: grid;
+    justify-content: start;
+    width: 100%;
+    grid-template-columns: 1fr;
+}
+
+.addComment {
+    margin-left: 20px;
+    border: none;
+    border-bottom: 1px solid #909090;
+    width: 96%;
+    margin: 20px 0 0 20px;
+    padding-bottom: 10px;
+    transition: all ease-in 0.4s;       
+}
+
+.addComment:focus {
+    transition: 0.4s;
+    border: none;
+    outline: none;
+}
+
+.addComment ~ .focus-border {
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: 0.4s;
+
+}
+
+.addComment:focus ~ .focus-border {
+    width: 96%;
+    transition: 0.4s;
+    left: 2%;
+}
+
+
+
