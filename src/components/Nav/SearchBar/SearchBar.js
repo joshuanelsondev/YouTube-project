@@ -37,12 +37,12 @@ export default function SearchBar({ setError, setVideos }) {
       //Make fetch call
       getVideos(userSearchInput, videoQuantity) //Use testApi when trying to limit the number of calls to the api, otherwise use useSearchInput
         .then((response) => {
-          setVideos(response.items);
-          navigate(`/videos`);
-        })
-        .catch((error) => {
-          console.log(error);
-          setError(true);
+          if (response.error) {
+            setError(true);
+          } else {
+            setVideos(response.items);
+            navigate(`/videos`);
+          }
         });
     }
   }
