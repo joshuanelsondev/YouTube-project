@@ -1,6 +1,7 @@
 import YouTube from 'react-youtube';
 import { useLocation } from "react-router-dom";
 import './Video.css'
+import Comments from './Comments';
 
 export default function Video() {
     const location = useLocation();
@@ -18,8 +19,9 @@ export default function Video() {
     };
 
   return (
-    <div>
+    <div className='videoDiv'>
       <YouTube className='youtubeVideo' videoId={id} opts={opts}  />
+      <Comments />
     </div>
   ) 
   
