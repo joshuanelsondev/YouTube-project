@@ -1,22 +1,26 @@
 import { useState } from "react";
 import './Comments.css';
+import { AiOutlineUser } from "react-icons/ai";
 
-export default function Comments() {
+export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
         commenter: "",
         text: ""
     }
+    
+
     const [comment, setComment] = useState(initialComment);
 
     function handleInput(event) {
-        setComment({...comment, [event.target.id]: event.target.value })
+        setComment({...comment, [event.target.id]: event.target.value });
     }
-    console.log(comment)
 
     function handleSubmit(event) {
         event.preventDefault()
-        setComment(initialComment)
+        setAllComments([...allComments, comment]);
+        setComment(initialComment);
     }
+
     return (
         <div className='commentsDiv'>
             <form onSubmit={handleSubmit}>
@@ -26,6 +30,17 @@ export default function Comments() {
                 <span className='focus-border'></span>
                 <input type="submit" value="comment" id="submitComment" />
             </form>
+            <div>
+                {allComments.map(comment => {
+                    return (
+                        <div>
+                            <AiOutlineUser size={25} />
+                            <span>{comment.commenter}</span>
+                            <li>{comment.text}</li>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

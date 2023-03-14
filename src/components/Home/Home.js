@@ -9,7 +9,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 
 
-export default function Home({ videos, setVideos }) {
+export default function Home({ setVideos }) {
   // const [error, setError ] = useState(false)
   // const [videos, setVideos ] = useState([])
   const navigate = useNavigate();
@@ -46,8 +46,6 @@ export default function Home({ videos, setVideos }) {
 
     
   };
-
-
   
   
   return (

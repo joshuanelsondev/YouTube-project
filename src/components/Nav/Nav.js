@@ -3,7 +3,7 @@ import Home from '../Home/Home'
 
 import './Nav.css';
 
-export default function Nav({ videos, setVideos }) {
+export default function Nav({ setVideos }) {
 
 
   return (
@@ -20,7 +20,7 @@ export default function Nav({ videos, setVideos }) {
             <Link className='navLink' to="/about">About</Link>
           </li>
           <li className='searchLi'>
-            <Home videos={videos} setVideos={setVideos} />
+            <Home setVideos={setVideos} />
           </li>
         </ul>
       </nav>

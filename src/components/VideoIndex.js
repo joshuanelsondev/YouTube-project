@@ -7,6 +7,7 @@ export default function VideoIndex({ videos }) {
    
     const navigate = useNavigate();
     const [videoThumbnails, setVideoThumbnails] = useState([]);
+    console.log(videos)
 
     useEffect(() => {
     
@@ -18,13 +19,12 @@ export default function VideoIndex({ videos }) {
             const id = video.id.videoId;
             const title = video.snippet.title;
         return(
-            <div className="thumbnail">
-                <img className="thumbnailImg" key={id || index} onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
+            <div key={`${id}-${index}`} className="thumbnail">
+                <img className="thumbnailImg"  onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
                 <span className="title">{title}</span>
             </div>
         )
     }))
-    console.log(videos)
 }, [videos]) 
 
 

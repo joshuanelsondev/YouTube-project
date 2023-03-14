@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import './Video.css'
 import Comments from './Comments';
 
-export default function Video() {
+export default function Video({ allComments, setAllComments}) {
     const location = useLocation();
     const video = location.state.video
     const id = video.id.videoId
@@ -21,7 +21,7 @@ export default function Video() {
   return (
     <div className='videoDiv'>
       <YouTube className='youtubeVideo' videoId={id} opts={opts}  />
-      <Comments />
+      <Comments allComments={allComments} setAllComments={setAllComments} />
     </div>
   ) 
   

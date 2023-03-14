@@ -10,8 +10,8 @@ import './index.css'
 
 export default function App() {
 
-  const [videos, setVideos ] = useState([])
-
+  const [videos, setVideos ] = useState([]);
+  const [allComments, setAllComments] = useState([]);
 
 
 
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/" />
           <Route path="/about" element={<About />} />
           <Route path="/videos" element={<VideoIndex videos={videos} />} />
-          <Route path="/videos/:id" element={<Video />} />
+          <Route path="/videos/:id" element={<Video allComments={allComments} setAllComments={setAllComments}/>} />
         </Routes>
       </Router>
     </div>
