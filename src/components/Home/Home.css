@@ -18,9 +18,9 @@
 }
 
 .search-bar input[type='text']:focus {
-  outline: none;
+  outline: 1px solid blue;
   z-index: 1;
-  border: 1px solid blue;
+
 }
 
 .search-bar button[type='submit'] {

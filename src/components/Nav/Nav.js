@@ -9,12 +9,12 @@ export default function Nav({ videos, setVideos }) {
   return (
     <header className="nav-wrapper">
       <h1>
-        <Link to="/">YouTube</Link>
+        <Link to="/videos">YouTube</Link>
       </h1>
       <nav>
         <ul>
           <li>
-            <Link to="/videos">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
