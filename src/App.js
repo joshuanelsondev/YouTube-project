@@ -1,5 +1,5 @@
 import Nav from './components/Nav/Nav';
-import Home from './components/Home/Home';
+import SearchBar from './components/SearchBar/SearchBar';
 import About from './components/About/About';
 import Video from './components/Video/Video';
 import VideoIndex from './components/VideoIndex/VideoIndex';
@@ -13,7 +13,9 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-        <Nav videos={videos} setVideos={setVideos} />
+        <Nav>
+          <SearchBar videos={videos} setVideos={setVideos} />
+        </Nav>
         <Routes>
           <Route path="/" />
           <Route path="/about" element={<About />} />

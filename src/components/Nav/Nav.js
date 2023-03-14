@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Home from '../Home/Home';
+import Home from '../SearchBar/SearchBar';
 
 import './Nav.css';
 
-export default function Nav({ videos, setVideos }) {
+export default function Nav({ children }) {
   return (
     <header className="nav-wrapper">
       <h1>
@@ -23,9 +23,7 @@ export default function Nav({ videos, setVideos }) {
               About
             </Link>
           </li>
-          <li className="search-li">
-            <Home videos={videos} setVideos={setVideos} />
-          </li>
+          <li className="search-li">{children}</li>
         </ul>
       </nav>
     </header>
