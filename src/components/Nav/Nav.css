@@ -1,5 +1,5 @@
 .nav-wrapper {
-  height: 8vh;
+  height: 60px;
   width: 100%;
   background-color: red;
   display: flex;
@@ -10,6 +10,7 @@
 .nav-wrapper > *,
 .nav-wrapper nav ul > * {
   margin: 0 1rem;
+  
 }
 
 .nav-wrapper a {
@@ -20,10 +21,26 @@
 .nav-wrapper ul {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: -webkit-fill-available;
 }
 
 .nav-wrapper li {
   list-style-type: none;
   font-size: 1.3rem;
+}
+
+nav {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.searchLi {
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: flex-start;
+}
+
+.navLink:hover {
+  text-decoration: underline;
 }

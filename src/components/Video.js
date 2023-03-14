@@ -17,6 +17,11 @@ export default function Video() {
         },
     };
 
-  return <YouTube className='youtubeVideo' videoId={id} opts={opts}  />;
+  return (
+    <div>
+      <YouTube className='youtubeVideo' videoId={id} opts={opts}  />
+    </div>
+  ) 
+  
                  
 };
