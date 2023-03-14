@@ -58,7 +58,7 @@ export default function SearchBar({ setError, setVideos }) {
           placeholder="Search"
         />
         <button type="submit">
-          <AiOutlineSearch className="searchIcon" size={25} />
+          <AiOutlineSearch className="search-icon" />
         </button>
       </form>
     </>

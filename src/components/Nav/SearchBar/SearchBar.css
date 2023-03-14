@@ -37,9 +37,10 @@
   color: red;
 }
 
-.search-bar .searchIcon {
+.search-bar .search-icon {
   position: relative;
   right: 10px;
   bottom: 3px;
   cursor: pointer;
+  font-size: 25px;
 }
