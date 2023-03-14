@@ -13,6 +13,8 @@ import './index.css';
 export default function App() {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(false);
+  const [allComments, setAllComments] = useState([]);
+
 
   return (
     <div className="wrapper">
@@ -24,7 +26,7 @@ export default function App() {
           <Route path="/" element={<Home error={error} />} />
           <Route path="/about" element={<About />} />
           <Route path="/videos" element={<VideoIndex videos={videos} />} />
-          <Route path="/videos/:id" element={<Video allComments={allComments} setAllComments={setAllComments}/>} />
+          <Route path="/videos/:id" element={<Video allComments={allComments} setAllComments={setAllComments} />} />
         </Routes>
       </Router>
     </div>

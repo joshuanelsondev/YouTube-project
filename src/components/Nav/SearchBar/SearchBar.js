@@ -12,7 +12,6 @@ export default function SearchBar({ setError, setVideos }) {
   const [userSearchInput, setUserSearchInput] = useState('');
   const [searchHistory, setSearchHistory] = useState([]);
   const [videoQuantity, setVideoQuantity] = useState(10);
-  // const [videos, setVideos ] = useState([])
 
   function handleTextInput(event) {
     setUserSearchInput(event.target.value);

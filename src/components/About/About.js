@@ -17,8 +17,8 @@ export default function About() {
           </p>
           <h3>About Our Founders:</h3>
           <aside>
-            {aboutInfo.map((person) => (
-              <div className="outter-card">
+            {aboutInfo.map((person, index) => (
+              <div key={index} className="outer-card">
                 <BioCard person={person} />
               </div>
             ))}
