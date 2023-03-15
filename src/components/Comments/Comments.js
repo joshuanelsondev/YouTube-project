@@ -67,8 +67,9 @@ export default function Comments({ allComments, setAllComments }) {
                             value="Comment" 
                             id="submitComment"  
                             style={{
-                                background: (focus.text && focus.commenter) ? '#4caf50' : '#EFEFEF',
-                                color: (focus.text && focus.commenter) ? 'white' : 'black'
+                                background: (focus.text && focus.commenter) ? '#4caf50' : '#EFEFEF', 
+                                color: (focus.text && focus.commenter) ? 'white' : 'black', 
+                                cursor: (focus.text && focus.commenter) ? 'pointer' : 'auto'
                             }}
                         />
                     </div>
