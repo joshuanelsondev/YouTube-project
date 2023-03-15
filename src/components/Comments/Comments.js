@@ -9,8 +9,8 @@ export default function Comments({ allComments, setAllComments }) {
     }
 
     const initialFocus = {
-        text: false,
-        commenter: false
+        commenter: false,
+        text: false
     }
     
     const [focus, setFocus] = useState(initialFocus);
@@ -28,6 +28,9 @@ export default function Comments({ allComments, setAllComments }) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        if (!focus.commenter || !focus.text) {
+            return
+        }
         setAllComments([...allComments, comment]);
         setComment(initialComment);
         setFocus(initialFocus);
@@ -43,9 +46,9 @@ export default function Comments({ allComments, setAllComments }) {
 
     return (
         <div className='commentsDiv'>
-            <form onSubmit={handleSubmit}>
-                {visibility && <input type="text" onChange={handleInput} id="commenter" value={comment.commenter} placeholder="Name" required />}
-                <input  onClick={toggleComments} onChange={handleInput} id="text" className='addComment' type="text" placeholder="Add a comment..." value={comment.text} required />
+            <form id="commentsForm" onSubmit={handleSubmit} noValidate>
+                {visibility && <input type="text" onChange={handleInput} id="commenter" value={comment.commenter} placeholder="Name" />}
+                <input  onClick={toggleComments} onChange={handleInput} id="text" className='addComment' type="text" placeholder="Add a comment..." value={comment.text} />
                 <span className='focus-border'></span>
                 {visibility && 
                     <div className="commentButtonsDiv">

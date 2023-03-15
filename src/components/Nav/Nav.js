@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import './Nav.css';
 
-export default function Nav({ setError, error, children }) {
+export default function Nav({ setError, error, children, videos }) {
+  console.log(videos)
   return (
     <>
       <header className="nav-wrapper">
         <h1>
-          <Link className="nav-link" to="/videos">
+          <Link className="nav-link" to="/videos/:id">
             YouTube
           </Link>
         </h1>

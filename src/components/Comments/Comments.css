@@ -2,12 +2,12 @@
     width: 100%;
 }
 
-form {
+#commentsForm {
     display: grid;
     justify-content: start;
     width: 100%;
     grid-template-columns: 1fr;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
@@ -41,6 +41,10 @@ form {
     left: 0;
 }
 
+.addComment,
+#commenter {
+    cursor: pointer;
+}
 .commentButtonsDiv {
     margin-top: 10px;
     display: flex;
@@ -71,6 +75,7 @@ form {
 .cancelButton:hover {
     background: red;
     color: white;
+    cursor: pointer;
 }
 
 .commentsSection {
@@ -86,6 +91,7 @@ form {
 
 .commentsSection-commenter {
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .commentsSection-text {
