@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './VideoIndex.css';
+import { useSelector } from 'react-redux';
 
-export default function VideoIndex({ videos }) {
+export default function VideoIndex() {
   const navigate = useNavigate();
   const [videoThumbnails, setVideoThumbnails] = useState([]);
+  const videos = useSelector((state) => state.videos.initialVideos);
 
   useEffect(() => {
     setVideoThumbnails(
       videos.map((video, index) => {
-        const alt = video.snippet.title;
         const title = video.snippet.title;
         const { url, width, height } = video.snippet.thumbnails.high;
         const id = video.id.videoId;
@@ -20,7 +21,7 @@ export default function VideoIndex({ videos }) {
               className="thumbnail-img"
               onClick={() => handleClick(id, video)}
               src={url}
-              alt={alt}
+              alt={title}
               style={{ width: `${width}px`, height: `${height}px` }}
             />
             <span className="title">{title}</span>
@@ -37,6 +38,3 @@ export default function VideoIndex({ videos }) {
 
   return <main className="all-thumbnails">{videoThumbnails}</main>;
 }
-
-
-
