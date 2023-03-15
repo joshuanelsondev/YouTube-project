@@ -78,10 +78,13 @@
     cursor: pointer;
 }
 
+.commentsSectionDiv {
+    margin-bottom: 50px;
+}
+
 .commentsSection {
     display: grid;
     grid-template-columns: 40px 1fr;
-    margin-bottom: 50px;
 }
 
 .userIcon {
@@ -96,4 +99,33 @@
 
 .commentsSection-text {
     list-style: none;
+    grid-column: 2;
+}
+
+.commentsActionsToggle {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.actionsDiv {
+    display: grid;
+    grid-template-columns: 20px 50px;
+    height: 40px;
+    width: fit-content;
+    row-gap: 5px;
+    border: none;
+    box-shadow: 2px 2px 4px grey;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    position: relative;
+    left: 95%;
+    bottom: 20px;
+}
+
+.actionEdit,
+.actionDelete {
+    display: contents;
+    cursor: pointer;
 }

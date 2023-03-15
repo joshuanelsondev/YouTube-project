@@ -1,6 +1,9 @@
 import { useState } from "react";
 import './Comments.css';
 import { AiOutlineUser } from "react-icons/ai";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import { MdEdit } from "react-icons/md";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
@@ -16,6 +19,7 @@ export default function Comments({ allComments, setAllComments }) {
     const [focus, setFocus] = useState(initialFocus);
     const [visibility, setVisibility] = useState(false);
     const [comment, setComment] = useState(initialComment);
+    const [actionsToggle, setActionsToggle] = useState(false);
 
     function handleInput(event) {
         setComment({...comment, [event.target.id]: event.target.value });
@@ -44,6 +48,10 @@ export default function Comments({ allComments, setAllComments }) {
         }
     }
 
+    function toggleActions() {
+        setActionsToggle(!actionsToggle);
+    }
+
     return (
         <div className='commentsDiv'>
             <form id="commentsForm" onSubmit={handleSubmit} noValidate>
@@ -68,10 +76,19 @@ export default function Comments({ allComments, setAllComments }) {
             <div>
                 {allComments.map(comment => {
                     return (
-                        <div className="commentsSection">
-                            <AiOutlineUser  className="userIcon" size={25} />
-                            <span className="commentsSection-commenter">{comment.commenter}</span>
-                            <li className="commentsSection-text">{comment.text}</li>
+                        <div className="commentsSectionDiv">
+                            <div className="commentsSection">
+                                <AiOutlineUser  className="userIcon" size={25} />
+                                <span className="commentsSection-commenter">{comment.commenter}</span>
+                                <li className="commentsSection-text">{comment.text}</li>
+                                <BiDotsVerticalRounded size={25} onClick={toggleActions} style={{cursor: 'pointer'}} className="commentsActionsToggle" />
+                            </div>
+                            {actionsToggle &&
+                                <div className="actionsDiv">
+                                    <span className="actionEdit"><MdEdit/>Edit</span>
+                                    <span className="actionDelete"><RiDeleteBin5Fill />Delete</span> 
+                                </div>
+                            }
                         </div>
                     )
                 })}

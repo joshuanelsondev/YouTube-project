@@ -16,7 +16,6 @@ export default function SearchBar({ setError, setVideos }) {
   function handleTextInput(event) {
     setUserSearchInput(event.target.value);
   }
-
   function handleSearch(event) {
     event.preventDefault();
     if (userSearchInput) {
