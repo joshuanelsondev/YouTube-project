@@ -19,7 +19,7 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-        <Nav error={error} setError={setError}>
+        <Nav error={error} setError={setError} videos={videos} >
           <SearchBar setError={setError} setVideos={setVideos} />
         </Nav>
         <Routes>

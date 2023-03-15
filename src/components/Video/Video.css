@@ -1,7 +1,7 @@
 .videoDiv {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 50%;
     align-items: center;
     margin-bottom: 10vh;
 }
