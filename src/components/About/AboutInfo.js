@@ -21,7 +21,7 @@ export const aboutInfo = [
     name: 'SangUn Park',
     img: sang,
     description:
-      'SangUn is the Technical Lead for this project. [The rest of Sang\'s bio. "Check out his other projects to see more of his work."]',
+      'SangUn is the Technical Lead for this project. Sang is an aspiring software professional with a passion for movies and social equity! "Check out his other projects to see more of his work."',
     githubUserName: 'SangunPark96',
   },
 ];
