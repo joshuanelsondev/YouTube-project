@@ -3,6 +3,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getVideos } from '../../../api/fetch';
 import { v1 as generateUniqueID } from 'uuid';
+<<<<<<< HEAD
+=======
+// import VideoIndex from '../../VideoIndex/VideoIndex';   
+// import testApi from '../../../api/testApi.json';
+>>>>>>> 6c8725694ea51c13736d92947634ff9457cf6be9
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../../features/VideosSlice/VieoSlice';
@@ -17,7 +22,6 @@ export default function SearchBar({ setError }) {
   function handleTextInput(event) {
     setUserSearchInput(event.target.value);
   }
-
   function handleSearch(event) {
     event.preventDefault();
     if (userSearchInput) {
@@ -34,6 +38,7 @@ export default function SearchBar({ setError }) {
       //Reset the state
       setUserSearchInput('');
 
+      setVideoQuantity(10);
       //Make fetch call
       getVideos(userSearchInput, videoQuantity) //Use testApi when trying to limit the number of calls to the api, otherwise use useSearchInput
         .then((response) => {

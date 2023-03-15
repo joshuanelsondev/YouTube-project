@@ -30,7 +30,7 @@ export default function VideoIndex() {
       })
     );
     console.log(videos);
-  }, [videos]);
+  }, [handleClick, videos]);
 
   function handleClick(id, video) {
     navigate(`/videos/${id}`, { state: { video } });

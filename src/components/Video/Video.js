@@ -20,7 +20,15 @@ export default function Video({ allComments, setAllComments }) {
 
   return (
     <div className="videoDiv">
-      <YouTube className="youtubeVideo" videoId={id} opts={opts} />
+      <YouTube 
+        className="youtubeVideo" 
+        videoId={id} 
+        opts={opts}
+        playerVars={{
+          enablejsapi: 1,
+          "web-share": 0
+        }}
+      />
       <Comments allComments={allComments} setAllComments={setAllComments} />
     </div>
   );
