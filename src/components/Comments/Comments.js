@@ -42,7 +42,13 @@ export default function Comments({ allComments, setAllComments }) {
     }
 
     function toggleComments(event) {
-        setComment(initialComment);
+        if (!visibility) {
+            setVisibility(true);
+        }
+
+        if (event.target.id === 'cancel') {
+            setComment(initialComment);
+        }
 
         if (event.target.id === "text") {
             setVisibility(true);
@@ -63,7 +69,7 @@ export default function Comments({ allComments, setAllComments }) {
                 <span className='focus-border'></span>
                 {visibility && 
                     <div className="commentButtonsDiv">
-                        <button onClick={toggleComments} className="cancelButton">Cancel</button>
+                        <button onClick={toggleComments} id="cancel" className="cancelButton">Cancel</button>
                         <input 
                             type="submit"
                             value="Comment" 
