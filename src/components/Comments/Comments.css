@@ -7,6 +7,8 @@ form {
     justify-content: start;
     width: 100%;
     grid-template-columns: 1fr;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .addComment {
@@ -39,10 +41,10 @@ form {
     left: 0;
 }
 
-.commentModal {
+.commentButtonsDiv {
+    margin-top: 10px;
     display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
+    justify-content: flex-end;    
 }
 
 #commenter {
@@ -71,4 +73,21 @@ form {
     color: white;
 }
 
+.commentsSection {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    margin-bottom: 50px;
+}
 
+.userIcon {
+   grid-column: 1 / 2; 
+   grid-row: 1 / 3;
+}
+
+.commentsSection-commenter {
+    font-weight: 600;
+}
+
+.commentsSection-text {
+    list-style: none;
+}

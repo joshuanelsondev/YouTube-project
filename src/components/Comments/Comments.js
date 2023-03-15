@@ -44,33 +44,31 @@ export default function Comments({ allComments, setAllComments }) {
     return (
         <div className='commentsDiv'>
             <form onSubmit={handleSubmit}>
+                {visibility && <input type="text" onChange={handleInput} id="commenter" value={comment.commenter} placeholder="Name" required />}
                 <input  onClick={toggleComments} onChange={handleInput} id="text" className='addComment' type="text" placeholder="Add a comment..." value={comment.text} required />
                 <span className='focus-border'></span>
                 {visibility && 
-                    <div className="commentModal">
-                        <input type="text" onChange={handleInput} id="commenter" value={comment.commenter} placeholder="Name" required />
-                        <div className="commentButtonsDiv">
-                            <button onClick={toggleComments} className="cancelButton">Cancel</button>
-                            <input 
-                                type="submit"
-                                value="Comment" 
-                                id="submitComment"  
-                                style={{
-                                    background: (focus.text && focus.commenter) ? '#4caf50' : '#EFEFEF',
-                                    color: (focus.text && focus.commenter) ? 'white' : 'black'
-                                }}
-                            />
-                        </div>
+                    <div className="commentButtonsDiv">
+                        <button onClick={toggleComments} className="cancelButton">Cancel</button>
+                        <input 
+                            type="submit"
+                            value="Comment" 
+                            id="submitComment"  
+                            style={{
+                                background: (focus.text && focus.commenter) ? '#4caf50' : '#EFEFEF',
+                                color: (focus.text && focus.commenter) ? 'white' : 'black'
+                            }}
+                        />
                     </div>
                 }
             </form>
             <div>
                 {allComments.map(comment => {
                     return (
-                        <div>
-                            <AiOutlineUser size={25} />
-                            <span>{comment.commenter}</span>
-                            <li>{comment.text}</li>
+                        <div className="commentsSection">
+                            <AiOutlineUser  className="userIcon" size={25} />
+                            <span className="commentsSection-commenter">{comment.commenter}</span>
+                            <li className="commentsSection-text">{comment.text}</li>
                         </div>
                     )
                 })}
