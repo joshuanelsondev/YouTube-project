@@ -10,11 +10,10 @@ form {
 }
 
 .addComment {
-    margin-left: 20px;
     border: none;
     border-bottom: 1px solid #909090;
-    width: 96%;
-    margin: 20px 0 0 20px;
+    width: 100%;
+    margin-top: 20px;
     padding-bottom: 10px;
     transition: all ease-in 0.4s;       
 }
@@ -32,14 +31,44 @@ form {
     height: 2px;
     background-color: black;
     transition: 0.4s;
-
 }
 
 .addComment:focus ~ .focus-border {
-    width: 96%;
+    width: 100%;
     transition: 0.4s;
-    left: 2%;
+    left: 0;
 }
 
+.commentModal {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+#commenter {
+    border: none;
+    border-bottom: 1px solid #909090;
+    width: 30%;
+}
+
+#commenter:focus {
+    outline: none;
+    border-bottom: 2px solid black
+}
+
+
+#submitComment, 
+.cancelButton {
+    width: fit-content;
+    border-radius: 40px;
+    padding: 5px 10px;
+    border: none;
+    margin-left: 20px;
+}
+
+.cancelButton:hover {
+    background: red;
+    color: white;
+}
 
 

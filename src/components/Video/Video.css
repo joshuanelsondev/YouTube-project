@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 65%;
     align-items: center;
+    margin-bottom: 10vh;
 }
 
 .youtubeVideo {
