@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getVideos } from '../../../api/fetch';
 import { v1 as generateUniqueID } from 'uuid';
-import VideoIndex from '../../VideoIndex/VideoIndex';
-import testApi from '../../../api/testApi.json';
+// import VideoIndex from '../../VideoIndex/VideoIndex';   
+// import testApi from '../../../api/testApi.json';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function SearchBar({ setError, setVideos }) {
@@ -32,6 +32,7 @@ export default function SearchBar({ setError, setVideos }) {
       //Reset the state
       setUserSearchInput('');
 
+      setVideoQuantity(10);
       //Make fetch call
       getVideos(userSearchInput, videoQuantity) //Use testApi when trying to limit the number of calls to the api, otherwise use useSearchInput
         .then((response) => {

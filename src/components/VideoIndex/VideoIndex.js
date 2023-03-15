@@ -24,9 +24,10 @@ export default function VideoIndex({ videos }) {
             </div>
         )
     }))
-}, [videos]) 
+}, [handleClick, videos]) 
 
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function handleClick(id, video) {
 
         navigate(`/videos/${id}`, { state: { video } });
