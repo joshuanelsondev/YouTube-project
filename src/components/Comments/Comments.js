@@ -24,7 +24,6 @@ export default function Comments({ allComments, setAllComments }) {
 
     function handleInput(event) {
         setComment({...comment, [event.target.id]: event.target.value });
-        // Check
         if (event.target.value !== "") {
             setValidInput({...validInput, [event.target.id]: true });
         } else {
@@ -43,6 +42,8 @@ export default function Comments({ allComments, setAllComments }) {
     }
 
     function toggleComments(event) {
+        setComment(initialComment);
+
         if (event.target.id === "text") {
             setVisibility(true);
         } else {

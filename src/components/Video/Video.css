@@ -1,7 +1,7 @@
 .videoDiv {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: fit-content;
     align-items: center;
     margin-bottom: 10vh;
 }
@@ -9,7 +9,7 @@
 .youtubeVideo {
     margin-top: 50px;
     display: flex;
-    width: 100vw;
+    width: fit-content;
     height: auto;
     justify-content: center;
 }
