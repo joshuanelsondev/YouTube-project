@@ -7,7 +7,8 @@ import CommentsActionsModal from "./CommentsActionsModal";
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
         commenter: "",
-        text: ""
+        text: "",
+        id: ""
     }
 
     const initialInput = {
@@ -34,7 +35,7 @@ export default function Comments({ allComments, setAllComments }) {
         if (!validInput.commenter || !validInput.text) {
             return
         }
-        setAllComments([...allComments, comment]);
+        setAllComments([...allComments, { ...comment, id: generateUniqueID() }]);
         setComment(initialComment);
         setValidInput(initialInput);
     }
@@ -88,7 +89,7 @@ export default function Comments({ allComments, setAllComments }) {
                                 <span className="commentsSection-commenter">{comment.commenter}</span>
                                 <li className="commentsSection-text">{comment.text}</li>
                             </div>
-                            <CommentsActionsModal  />
+                            <CommentsActionsModal allComments={allComments} setAllComments={setAllComments} comment={comment} />
                         </div>
                     )
                 })}

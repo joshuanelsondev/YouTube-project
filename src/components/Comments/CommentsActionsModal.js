@@ -5,11 +5,23 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 
 
-export default function CommentsActionsModal () {
+export default function CommentsActionsModal ({ allComments, setAllComments, comment }) {
    const [actionsToggle, setActionsToggle] = useState(false)
    
    function toggleActions() {
         setActionsToggle(!actionsToggle);
+    }
+
+    function deleteComment() {
+        const confirm = window.confirm("Proceed with deletion?");
+
+        if (confirm) {
+            const updatedComments = allComments.filter(commentEle => commentEle.id !== comment.id)
+            setAllComments(updatedComments)
+        } else {
+            return
+        }
+
     }
 
     return (
@@ -19,7 +31,7 @@ export default function CommentsActionsModal () {
             {actionsToggle && 
                 <div className="actionsDiv">
                     <span className="actionEdit"><MdEdit/>Edit</span>
-                    <span className="actionDelete"><RiDeleteBin5Fill />Delete</span> 
+                    <span onClick={deleteComment} className="actionDelete"><RiDeleteBin5Fill />Delete</span> 
                 </div>}
             
         </div>

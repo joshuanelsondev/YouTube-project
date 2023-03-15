@@ -6,7 +6,7 @@ import Comments from '../Comments/Comments';
 export default function Video({ allComments, setAllComments }) {
   const location = useLocation();
   const video = location.state;
-  console.log(video)
+
   const id = video.id.videoId;
   
 
