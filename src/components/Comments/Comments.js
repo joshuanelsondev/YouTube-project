@@ -2,9 +2,8 @@ import { useState } from "react";
 import './Comments.css';
 import { AiOutlineUser } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import { MdEdit } from "react-icons/md";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import { v1 as generateUniqueID } from "uuid";
+import CommentsActionsModal from "./CommentsActionsModal";
 
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
@@ -16,6 +15,7 @@ export default function Comments({ allComments, setAllComments }) {
         commenter: false,
         text: false
     }
+    
     
     const [validInput, setValidInput] = useState(initialInput);
     const [visibility, setVisibility] = useState(false);
@@ -94,10 +94,7 @@ export default function Comments({ allComments, setAllComments }) {
                                 <BiDotsVerticalRounded size={25} onClick={toggleActions} style={{cursor: 'pointer'}} className="commentsActionsToggle" />
                             </div>
                             {actionsToggle &&
-                                <div className="actionsDiv">
-                                    <span className="actionEdit"><MdEdit/>Edit</span>
-                                    <span className="actionDelete"><RiDeleteBin5Fill />Delete</span> 
-                                </div>
+                                <CommentsActionsModal />
                             }
                         </div>
                     )
