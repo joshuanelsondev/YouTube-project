@@ -3,11 +3,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getVideos } from '../../../api/fetch';
 import { v1 as generateUniqueID } from 'uuid';
-<<<<<<< HEAD
-=======
-// import VideoIndex from '../../VideoIndex/VideoIndex';   
-// import testApi from '../../../api/testApi.json';
->>>>>>> 6c8725694ea51c13736d92947634ff9457cf6be9
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../../features/VideosSlice/VieoSlice';
