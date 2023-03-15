@@ -4,6 +4,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { v1 as generateUniqueID } from "uuid";
 
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
@@ -76,7 +77,7 @@ export default function Comments({ allComments, setAllComments }) {
             <div>
                 {allComments.map(comment => {
                     return (
-                        <div className="commentsSectionDiv">
+                        <div key={generateUniqueID()} className="commentsSectionDiv">
                             <div className="commentsSection">
                                 <AiOutlineUser  className="userIcon" size={25} />
                                 <span className="commentsSection-commenter">{comment.commenter}</span>

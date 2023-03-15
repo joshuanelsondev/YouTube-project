@@ -3,7 +3,7 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import './Nav.css';
 
 export default function Nav({ setError, error, children, videos }) {
-  console.log(videos)
+
   return (
     <>
       <header className="nav-wrapper">
