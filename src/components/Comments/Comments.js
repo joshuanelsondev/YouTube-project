@@ -7,7 +7,6 @@ export default function Comments({ allComments, setAllComments }) {
         commenter: "",
         text: ""
     }
-    
 
     const [comment, setComment] = useState(initialComment);
 
