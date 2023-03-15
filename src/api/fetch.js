@@ -2,7 +2,7 @@
 const BASE_URL =
   'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=';
 const API_KEY = process.env.REACT_APP_API_KEY;
-console.log(API_KEY)
+
 // For a regular search use BASE_URL + 'part=snippet&maxResults=25&q=surfing&key=[YOUR_API_KEY]'
 
 // When searching for videos use the <snippet.channelId> after 'relatedToVideoId=' from the JSON: BASE_URL + 'part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=[YOUR_API_KEY]'
