@@ -26,7 +26,7 @@ export default function Video({ allComments, setAllComments }) {
         opts={opts}
         playerVars={{
           enablejsapi: 1,
-          "web-share": navigator.share ? 1 : 0
+          "web-share": 0
         }}
       />
       <Comments allComments={allComments} setAllComments={setAllComments} />
