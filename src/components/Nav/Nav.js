@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import './Nav.css';
 
-export default function Nav({ setError, error, children, videos }) {
+export default function Nav({ setError, error, children }) {
 
   return (
     <>

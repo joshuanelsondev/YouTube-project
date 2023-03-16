@@ -1,14 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './VideoIndex.css';
 import { useSelector } from 'react-redux';
 
 export default function VideoIndex() {
-  const navigate = useNavigate();
   const videos = useSelector((state) => state.videos.initialVideos);
-
-  function handleClick(id, video) {
-    navigate(`/videos/${id}`, { state: { video } });
-  }
 
   return (
     <main className="all-thumbnails">
@@ -19,13 +14,14 @@ export default function VideoIndex() {
 
         return (
           <div className="single-thumbnail" key={id || index}>
-            <img
-              className="thumbnail-img"
-              onClick={() => handleClick(id, video)}
-              src={url}
-              alt={title}
-              style={{ width: `${width}px`, height: `${height}px` }}
-            />
+            <Link to={`/videos/${id}`} state={ video } >
+              <img
+                className="thumbnail-img"
+                src={url}
+                alt={title}
+                style={{ width: `${width}px`, height: `${height}px` }}
+              />
+            </Link>
             <span className="title">{title}</span>
           </div>
         );

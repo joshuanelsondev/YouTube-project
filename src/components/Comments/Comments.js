@@ -1,15 +1,14 @@
 import { useState } from "react";
 import './Comments.css';
 import { AiOutlineUser } from "react-icons/ai";
-import { BiDotsVerticalRounded } from "react-icons/bi";
-import { MdEdit } from "react-icons/md";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import { v1 as generateUniqueID } from "uuid";
+import CommentsActionsModal from "./CommentsActionsModal";
 
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
         commenter: "",
-        text: ""
+        text: "",
+        id: ""
     }
 
     const initialInput = {
@@ -17,10 +16,10 @@ export default function Comments({ allComments, setAllComments }) {
         text: false
     }
     
+    
     const [validInput, setValidInput] = useState(initialInput);
     const [visibility, setVisibility] = useState(false);
     const [comment, setComment] = useState(initialComment);
-    const [actionsToggle, setActionsToggle] = useState(false);
 
     function handleInput(event) {
         setComment({...comment, [event.target.id]: event.target.value });
@@ -36,13 +35,19 @@ export default function Comments({ allComments, setAllComments }) {
         if (!validInput.commenter || !validInput.text) {
             return
         }
-        setAllComments([...allComments, comment]);
+        setAllComments([...allComments, { ...comment, id: generateUniqueID() }]);
         setComment(initialComment);
         setValidInput(initialInput);
     }
 
     function toggleComments(event) {
-        setComment(initialComment);
+        if (!visibility) {
+            setVisibility(true);
+        }
+
+        if (event.target.id === 'cancel') {
+            setComment(initialComment);
+        }
 
         if (event.target.id === "text") {
             setVisibility(true);
@@ -51,9 +56,7 @@ export default function Comments({ allComments, setAllComments }) {
         }
     }
 
-    function toggleActions() {
-        setActionsToggle(!actionsToggle);
-    }
+    
 
     return (
         <div className='commentsDiv'>
@@ -63,7 +66,7 @@ export default function Comments({ allComments, setAllComments }) {
                 <span className='focus-border'></span>
                 {visibility && 
                     <div className="commentButtonsDiv">
-                        <button onClick={toggleComments} className="cancelButton">Cancel</button>
+                        <button onClick={toggleComments} id="cancel" className="cancelButton">Cancel</button>
                         <input 
                             type="submit"
                             value="Comment" 
@@ -85,14 +88,8 @@ export default function Comments({ allComments, setAllComments }) {
                                 <AiOutlineUser  className="userIcon" size={25} />
                                 <span className="commentsSection-commenter">{comment.commenter}</span>
                                 <li className="commentsSection-text">{comment.text}</li>
-                                <BiDotsVerticalRounded size={25} onClick={toggleActions} style={{cursor: 'pointer'}} className="commentsActionsToggle" />
                             </div>
-                            {actionsToggle &&
-                                <div className="actionsDiv">
-                                    <span className="actionEdit"><MdEdit/>Edit</span>
-                                    <span className="actionDelete"><RiDeleteBin5Fill />Delete</span> 
-                                </div>
-                            }
+                            <CommentsActionsModal allComments={allComments} setAllComments={setAllComments} comment={comment} setComment={setComment} />
                         </div>
                     )
                 })}
