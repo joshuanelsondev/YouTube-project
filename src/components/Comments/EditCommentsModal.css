@@ -1,0 +1,56 @@
+.editCommentModal {
+    width: fit-content;
+    display: grid;
+    grid-template-rows: 1fr 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.editCommentText {
+    grid-row: 1;
+    grid-column: 1 /4;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    margin: 10px 0;
+}
+
+.editCommentText:focus {
+    outline: none;
+    border-bottom: 2px solid green;
+}
+
+.cancelEdit {
+    grid-row: 2;
+    grid-column: 2;
+    left: 90%;
+}
+
+.cancelEdit:hover {
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+.saveEdit {
+    grid-row: 2;
+    grid-column: 3;
+    left: 60%;
+}
+
+.saveEdit:hover {
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+
+.cancelEdit,
+.saveEdit {
+    width: fit-content;
+    border-radius: 40px;
+    padding: 0px 10px;
+    border: none;
+    position: relative;
+
+    
+}

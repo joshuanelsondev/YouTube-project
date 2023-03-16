@@ -1,42 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import './VideoIndex.css';
+import { useSelector } from 'react-redux';
 
+export default function VideoIndex() {
+  const videos = useSelector((state) => state.videos.initialVideos);
 
-export default function VideoIndex({ videos }) {
-   
-    const navigate = useNavigate();
-    const [videoThumbnails, setVideoThumbnails] = useState([]);
+  return (
+    <main className="all-thumbnails">
+      {videos.map((video, index) => {
+        const title = video.snippet.title;
+        const { url, width, height } = video.snippet.thumbnails.high;
+        const id = video.id.videoId;
 
-    useEffect(() => {
-    
-        setVideoThumbnails(videos.map((video, index) => {
-            const url = video.snippet.thumbnails.medium.url;
-            const width = video.snippet.thumbnails.medium.width;
-            const height = video.snippet.thumbnails.medium.height;
-            const alt = video.snippet.title;
-            const id = video.id.videoId;
-            const title = video.snippet.title;
-        return(
-            <div key={`${id}-${index}`} className="thumbnail">
-                <img className="thumbnailImg"  onClick={() => handleClick(id, video)} src={url} alt={alt} style={{width: `${width}px`, height: `${height}px`}} />
-                <span className="title">{title}</span>
-            </div>
-        )
-    }))
-}, [handleClick, videos]) 
-
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    function handleClick(id, video) {
-
-        navigate(`/videos/${id}`, { state: { video } });
-    }
-
-    return(
-        <div className="thumbnailsDiv">
-            {videoThumbnails}
-        </div>
-    )
-};
-
+        return (
+          <div className="single-thumbnail" key={id || index}>
+            <Link to={`/videos/${id}`} state={ video } >
+              <img
+                className="thumbnail-img"
+                src={url}
+                alt={title}
+                style={{ width: `${width}px`, height: `${height}px` }}
+              />
+            </Link>
+            <span className="title">{title}</span>
+          </div>
+        );
+      })}
+    </main>
+  );
+}

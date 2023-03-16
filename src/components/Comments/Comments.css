@@ -80,6 +80,10 @@
 
 .commentsSectionDiv {
     margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 200px;
+    height: 100px;
+    padding-top: 10px;
 }
 
 .commentsSection {
@@ -103,6 +107,10 @@
 }
 
 .commentsActionsToggle {
+  
+}
+
+.commentsActionsModalDiv {
     grid-column: 3;
     grid-row: 1;
 }
@@ -120,8 +128,6 @@
     padding-bottom: 15px;
     border-radius: 10px;
     position: relative;
-    left: 95%;
-    bottom: 20px;
 }
 
 .actionEdit,

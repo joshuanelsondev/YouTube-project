@@ -3,15 +3,16 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getVideos } from '../../../api/fetch';
 import { v1 as generateUniqueID } from 'uuid';
-// import VideoIndex from '../../VideoIndex/VideoIndex';   
-// import testApi from '../../../api/testApi.json';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../../features/VideosSlice/VieoSlice';
 
-export default function SearchBar({ setError, setVideos }) {
+export default function SearchBar({ setError }) {
   const navigate = useNavigate();
   const [userSearchInput, setUserSearchInput] = useState('');
   const [searchHistory, setSearchHistory] = useState([]);
   const [videoQuantity, setVideoQuantity] = useState(10);
+  const dispatch = useDispatch();
 
   function handleTextInput(event) {
     setUserSearchInput(event.target.value);
@@ -39,7 +40,7 @@ export default function SearchBar({ setError, setVideos }) {
           if (response.error) {
             setError(true);
           } else {
-            setVideos(response.items);
+            dispatch(setSearch(response.items));
             navigate(`/videos`);
           }
         });
