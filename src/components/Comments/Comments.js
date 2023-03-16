@@ -89,7 +89,7 @@ export default function Comments({ allComments, setAllComments }) {
                                 <span className="commentsSection-commenter">{comment.commenter}</span>
                                 <li className="commentsSection-text">{comment.text}</li>
                             </div>
-                            <CommentsActionsModal allComments={allComments} setAllComments={setAllComments} comment={comment} />
+                            <CommentsActionsModal allComments={allComments} setAllComments={setAllComments} comment={comment} setComment={setComment} />
                         </div>
                     )
                 })}

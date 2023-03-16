@@ -5,10 +5,6 @@ import { useSelector } from 'react-redux';
 export default function VideoIndex() {
   const videos = useSelector((state) => state.videos.initialVideos);
 
-  // function handleClick(id, video) {
-  //   navigate(, { state: { video } });
-  // }
-
   return (
     <main className="all-thumbnails">
       {videos.map((video, index) => {
