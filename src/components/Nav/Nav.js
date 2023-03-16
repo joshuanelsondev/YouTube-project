@@ -8,7 +8,7 @@ export default function Nav({ setError, error, children }) {
     <>
       <header className="nav-wrapper">
         <h1>
-          <Link className="nav-link" to="/videos">
+          <Link className="nav-link" to="/">
             YouTube
           </Link>
         </h1>
