@@ -1,4 +1,5 @@
 import "./Comments.css"
+import "./EditCommentsModal.css"
 import { useState } from "react";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
@@ -31,6 +32,9 @@ export default function CommentsActionsModal ({ allComments, setAllComments, com
     }
 
     function toggleEditModal(event) {
+        if (event.target.id === "cancel") {
+            setEditInput(comment.text)
+        }
         setActionsToggle(false);
         setEditModalOpen(!editModalOpen);
     }
@@ -57,7 +61,7 @@ export default function CommentsActionsModal ({ allComments, setAllComments, com
                 {editModalOpen && 
                     <form className="editCommentModal">
                         <input onChange={handleInput} type="text" className="editCommentText" value={editInput}/>
-                        <button onClick={toggleEditModal} className="cancelEdit">Cancel</button>
+                        <button onClick={toggleEditModal} id="cancel" className="cancelEdit">Cancel</button>
                         <button onClick={handleSubmit} className="saveEdit">Save</button>
                     </form>
                 }
