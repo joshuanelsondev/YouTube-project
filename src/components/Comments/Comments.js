@@ -48,7 +48,7 @@ export default function Comments({ allComments, setAllComments }) {
         });
     
         return () => unsubscribe();
-      }, []);
+      }, [commentsRef]);
 
     const handleSubmit = async (event)  => {
         event.preventDefault();
