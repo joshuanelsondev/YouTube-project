@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Comments.css';
 import { AiOutlineUser } from "react-icons/ai";
 import { v1 as generateUniqueID } from "uuid";
 import CommentsActionsModal from "./CommentsActionsModal";
+import { db } from "../../firebase-config";
+import { collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } from "firebase/firestore";
+
 
 export default function Comments({ allComments, setAllComments }) {
     const initialComment = {
@@ -20,6 +23,7 @@ export default function Comments({ allComments, setAllComments }) {
     const [validInput, setValidInput] = useState(initialInput);
     const [visibility, setVisibility] = useState(false);
     const [comment, setComment] = useState(initialComment);
+    const commentsRef = collection(db, "comments");
 
     function handleInput(event) {
         setComment({...comment, [event.target.id]: event.target.value });
@@ -30,11 +34,31 @@ export default function Comments({ allComments, setAllComments }) {
         }
     }
 
-    function handleSubmit(event) {
+    useEffect(() => {
+        const queryComments = query(
+          commentsRef,
+          orderBy("createdAt")
+        );
+        const unsubscribe = onSnapshot(queryComments, (snapshot) => {
+          let comments = [];
+          snapshot.forEach((doc) => {
+            comments.push({ ...doc.data(), id: doc.id });
+          });
+          setComment(comments);
+        });
+    
+        return () => unsubscribe();
+      }, []);
+
+    const handleSubmit = async (event)  => {
         event.preventDefault();
         if (!validInput.commenter || !validInput.text) {
             return
         }
+        await addDoc(commentsRef, {
+            text: comment,
+            createdAt: serverTimestamp()
+          });
         setAllComments([...allComments, { ...comment, id: generateUniqueID() }]);
         setComment(initialComment);
         setValidInput(initialInput);
